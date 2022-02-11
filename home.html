@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dentalgram</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+     <style type="text/css" href="home.css">
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing:border-box;    
+        }
+        body{
+            width:100%;
+            margin:0;
+            font-family:'Poppins';
+        }
+        .logobar{
+            display:flex;
+            flex: 1;
+        }
+        .btnbook{
+            background-color: rgb(90,189,231);
+            box-sizing: border-box;
+            border-color: #fff;
+            border-radius: 25px;
+            color: #fff;
+            font-size: 14px;
+            width: 30%;
+            height: 35px;
+        }
+
+        .booklogin{
+            padding: 5px;
+            text-align: end;
+            vertical-align:top;
+            
+        }
+
+        .login{
+            margin-left: 10px;
+            background-color: grey;
+            border-radius: 25px;
+        }
+
+        /* ----------------Navbar css-------------- */
+        .navrow{
+            display:flex;
+            flex:1;
+        }
+
+        .navbar-nav a{
+            font-weight: bold;
+            font-size: 16px;
+            text-decoration:none;
+            color:#000;
+        } 
+        .navbar-nav a:hover, a:focus ,a:active{
+            font-weight: bold;
+            font-size: 20px;
+            text-decoration:none;
+            color:rgb(90,189,231);
+        } 
+        .storelink{
+            display:flex;
+            
+        }
+        .storelink img{
+            width: 125px;
+            height: 40px;
+            margin:5px;
+        }
+        /* -------------------Form-Video Css--------- */
+        #form .row .col-lg-6{
+            border: none;
+        } 
+        .iframe .src{
+            object-fit:contain;
+        }
+        .overlay{
+            position: absolute;
+            color: #fff;
+        }
+        .overlay .toptext{
+            margin-top: -500px;
+            vertical-align: text-top;
+            text-align: center;
+            font-size: 25px;
+            font-weight: bolder;
+            align-items: top;
+            justify-content: first baseline;
+        }
+        .overlay .bottext{
+            margin-top: 0px;
+            vertical-align: text-bottom;
+            text-align: justify;
+            font-size: 10px;
+            font-weight: bolder;
+            align-items: bottom;
+            justify-content: last baseline;
+        }
+        /* -------------------------------------Dental Clinic------------------- */
+        .iwtxt{
+            padding:5px;
+        }
+        .iwtxt img{
+            padding:5px;
+        }
+        /* --------------------------Card css--------------- */
+        .cards{
+            background-image:url('dentagram/dentagram/assets/images/BlueDesign.png');
+            background-repeat: no-repeat;
+            padding:50px;
+        }
+        .cards .justify-content-start{
+            margin-left: 65px;
+            margin-bottom:-20px;
+        }
+        .cards .justify-content-end{
+            margin-right:65px;
+        }
+        .cards .round{
+            width: 30%;
+            height: 175px;
+            border:2px solid;
+            border-color: rgb(90,189,231);
+            border-radius: 25px;
+            background-color:#fff;
+            padding:5px;
+            margin:50px;
+        }
+        .round h4{
+            color:rgb(90,189,231);
+            margin-top:-50px;
+            margin-bottom:0;
+            font-weight:bolder;
+            font-size:20px;
+            margin-left:10px;
+        }
+        .round p{
+            word-wrap: break-word;
+            margin-left:10px;
+        }
+        .cards .round .choose_img{
+            width: 100px;
+            height: 100px;
+            border-radius:50%;
+            position: relative;
+            top: -50px;
+            background:#fff;
+            transform:translateX(25%);
+        }
+        .cards .round .choose_img img{
+            width: 100px;
+            height: 100px;
+            padding: 3px;
+
+        }
+        /* --------------------------Dental Treatments------------------ */
+        .dentreat{
+            background-image:url('dentagram/dentagram/assets/images/bgimage.png');
+            background-repeat:no-repeat;
+        }
+        .treatments{
+            padding:15px;
+        }
+        .rectbl{
+            background-color:rgb(90,189,231);
+            border-radius:20px;
+            display:flex;
+            align-content:space-between;
+            width:20%;
+            height:60px;
+        }
+        .rectwt{
+            background-color:#fff;
+            border-radius:20px;
+            display:flex;
+            align-content:space-between;
+            width:20%;
+            height:60px;
+        }
+        .rectbl .icons{
+            padding:5px;
+            border-radius:20px;
+        }
+        .rectwt .icons{
+            padding:5px;
+            border-radius:20px;
+        }
+        .rectbl .icons img{
+            font-size:200px;
+            background-color:#fff;
+            border-radius:20px;
+        }
+        .rectwt .icons img{
+            font-size:200px;
+            background-color:rgb(90,189,231);
+            border-radius:20px;
+        }
+        .rectbl .maintext{
+            font-weight:bold;
+            color:#fff;
+        }
+        .rectwt .maintext{
+            font-weight:bold;
+            color:rgb(90,189,231);
+        }
+            /* ----------------------Emergency Css--------------- */
+        .girlbg{
+            background-image:url('dentagram/dentagram/assets/images/DentistEmergency.png');
+            background-repeat:no-repeat;
+        }
+        #emergency {
+            text-align:center;
+            padding:125px;
+            margin-left:-100px;
+        }
+        .emerbook{
+            margin-left:-450px;
+            padding-top:-50px;
+            font-weight:bold;
+        }
+            /*---------------------- Footer CSS----------------- */
+        .social-icon i{
+            background-color:rgb(90,189,231);
+            color: #fff;
+            border-radius: 50%;
+            font-size: 25px;
+        }
+        .social-icon a:hover{
+            background-color:rgb(90,189,231);
+            color: #fff;
+            transform: scale(1.5);
+            font-size: 40px;
+            border-radius: 50%;
+        }        
+        .social-icon i{
+            padding: 10px;
+        }
+        .rectin{
+            background-color:rgb(90,189,231);
+            border-radius:25px;
+            width: 70%;
+            height: 300px;
+            padding-top:35px;
+            margin-top:20px;
+        }
+        .footerone{
+            background-color: #000;
+        }
+        .leftsec{
+            margin-left:60px;
+        }
+        .conus{
+            width: 30%;
+            font-weight: bold;
+            text-align: center;
+            
+            background-color: #fff;
+            border-radius: 5px;
+            margin-bottom: 25px;
+            
+        }
+        .conus a{
+            color: rgb(90,189,231);
+            text-decoration: none;
+        }
+        .last{
+            font-size: 15px;
+            padding:10px;
+            padding-left: 50px;
+            padding-right: 50px;
+            background-color: rgb(90,189,231);
+        }
+        #dentalgram_pic{
+            padding: 50px;
+        }   
+        #dentistry{
+            width:10px;
+            height:10px;
+        }
+    </style>
+</head>
+<body>
+    <section class="topheader">
+        <div class="container-fluid header">
+            <div class="row d-flex logobar">
+                <div class="col-sm-8 col-md-6 logocol">
+                    <img class="img-fluid" src="dentagram/dentagram/assets/images/MainLogo.png">
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-6 booklogin justify-content-end">
+                    <button class="btnbook">Book an Appointment</button>
+                    <select class="login">
+                        <option>Login</option>
+                        <option>Temp</option>
+                        <option>Dental Offices</option>
+                    </select>
+
+                </div>
+            </div>
+            
+            <div class="row navrow">
+                <div class="col-lg-6 col-md-6 justify-content-start">
+                          <nav class="navbar navbar-expand-lg">
+                            <div class="container-fluid">
+                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon bg-light text-dark"></span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="navbarNav">
+                                    <ul class="navbar-nav">
+                                        <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                        </li>
+                                        <li class="nav-item">
+                                        <a class="nav-link" href="#">Treatment</a>
+                                        </li>
+                                        <li class="nav-item">
+                                        <a class="nav-link" href="#">About</a>
+                                        </li>
+                                        <li class="nav-item">
+                                        <a class="nav-link" href="#">Blog</a>
+                                        </li>
+                                        <li class="nav-item">
+                                        <a class="nav-link" href="#">Contact&nbsp;Us</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            </nav>
+                   </div>
+        
+                <div class="col-lg-6 col-md-6 justify-content-end storelink ">       
+                   <img class="img-fluid pstlink" src="dentagram/dentagram/assets/images/Layer36.png" alt="play store link">
+                    <img class="img-fluid ioslink"src="dentagram/dentagram/assets/images/Layer37.png" alt="ios app store link">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <section class="form_video">
+                        <div style="overflow:auto;">
+                            <div style="float:right";>
+                                <button class="btn-secondary text-light" type="button" id="nextstep">Next Step
+                            </div>
+                        
+                        <div class="col-8 embed-responsive" id="video">
+                            <iframe class="embed-responsive-item" src="dentagram/dentagram/assets/video/video-bg.mp4" allowfullscreen ></iframe>
+                        </div>
+    </section> -->
+    <section class="form and video">
+        <div class="container-fluid">
+            <div class="row row-cols-2">
+                <div class="col-lg-4 col-md-4 col-sm-12 text-dark mr-5" style="background-color: rgb(90,189,231);">
+                    <h4 class="text-center fw-bolder p-5">Are you a patient?</h4>
+                    <form>
+                            <div class="row mt-0 p-2 mb-1">
+                                <div class="col-sm-12 col-md-6 col-lg-6">
+                                     <input type="text" placeholder="Name" required>
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-lg-6">
+                                    <input type="email" placeholder="Email" required>
+                                </div>   
+                            </div>
+                            <div class="row mt-0 p-2 mb-1">
+                                <div  class="col-sm-12 col-md-12 col-lg-12">
+                                     <input type="text" placeholder="Address" required>
+                                </div>
+                            </div>   
+                            <div class="row row-cols-2 mt-0 p-2 mb-1">
+                                <div class="col-sm-12 col-md-6 col-lg-6">
+                                     <input type="text" placeholder="City" required>
+                                </div>
+                                <div  class="col-sm-12 col-md-6 col-lg-6">
+                                    <input type="text" placeholder="State">
+                                </div>   
+                            </div>
+                            <div class="row row-cols-2 mt-0 p-2 mb-1">
+                                <div  class="col-sm-12 col-md-6 col-lg-6">
+                                     <input type="text" placeholder="Country">
+                                </div>
+                                <div  class="col-sm-12 col-md-6 col-lg-6">
+                                    <input type="number" placeholder="Zipcode">
+                                </div>   
+                            </div>
+                            
+                     </form>
+                </div>
+                <div class="col-lg-8 col-md-8 col-sm-12">
+                    <video class="video-fluid w-100 h-100" src="dentagram/dentagram/assets/video/video-bg.mp4" poster="dentagram/dentagram/assets/images/MainVideoImage.png" controls autoplay loop></video>   
+                    <div class="overlay">
+                        <div class="toptext"><h1>HIRE TEMP FOR YOUR DENTAL OFFICE</h1></div>
+                        <div class="bottext">
+                        <h2>We provide digital solutions to post temporary jobs to fulfil the requirements of your dental office</h2>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="side_pic_dentalgram">
+        <div class="container-fluid">
+            <div class="row row-cols-2 mt-5 mb-5">
+                <div class="col-lg-5 col-sm-12 col-md-7">
+                    <img class="img-fluid" src="dentagram/dentagram/assets/images/Dentist.png">
+                </div>
+                <div class="col-lg-7 col-sm-12 col-md-5">
+                    <h3 class="fw-bold text-center">Dentalgram</h3>
+                    <p>Is your tooth aching?Do you want to get your teeth aligned for a perfect smile?If yes,Dentalgram,a leading Dental clinic is here to asist you.</p>
+
+                    <div class="row iwtxtr">
+                        <div class="col-sm-12 col-md-6 col-lg-6 iwtxt">
+                           <span> <img class="img-fluid" src="dentagram/dentagram/assets/images/Icon01_1.png" alt="affordable">Affordable</span>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                        <span> <img class="img-fluid" src="dentagram/dentagram/assets/images/Icon04_1.png" alt="dedicated">Dedicated</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                           <span> <img class="img-fluid" src="dentagram/dentagram/assets/images/Icon02_1.png" alt="compassionate">Compassionate</span>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                        <span> <img class="img-fluid" src="dentagram/dentagram/assets/images/Icon05_0.png" alt="comprehensive">Comprehensive</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                           <span> <img class="img-fluid" src="dentagram/dentagram/assets/images/Icon03_1.png" alt="experienced">Experienced</span>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                        <span> <img class="img-fluid" src="dentagram/dentagram/assets/images/Icon06_0.png" alt="effective">Effective</span>
+                        </div>
+                    </div>
+            </div></div>
+        </div>
+    </section>
+
+    <section class="whychoosedentalgram">
+        <div class="container-fluid cards">
+        <h2 class="text-center fw-bolder">Why Choose Dentalgram?</h2>
+            <div class="row justify-content-start">
+                <div class="col-lg-4 col-md-4 col-sm-12 round">
+                    <div class="choose_img">
+                        <img src="dentagram/dentagram/assets/images/Icon01_0.png" alt="dentist">
+                    </div>
+                    <h4 class="heading">Qualified Dentists</h4>
+                    <p class="subtext">We have a team of qualified dentists and staff who are available on the site.We will find the best dentist for you.</p>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 round">
+                    <div class="choose_img">
+                        <img src="dentagram/dentagram/assets/images/Icon02_0.png" alt="priority">
+                    </div>
+                    <h4 class="heading">Emergency Priority</h4>
+                    <p class="subtext">Our dental offices know what a dental emergency is and give priority treatment to such cases.</p>
+                </div>
+            </div>
+            <div class="row justify-content-end">
+                <div class="col-lg-4 col-md-4 col-sm-12 round">
+                    <div class="choose_img">
+                      <img src="dentagram/dentagram/assets/images/Icon03_0.png" alt="located">
+                    </div>
+                    <h4 class="heading">Centrally Located</h4>
+                    <p class="subtext">We will connect you to the best dental clinic located at easy to access location near you.</p>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 round">
+                    <div class="choose_img">
+                        <img src="dentagram/dentagram/assets/images/Icon04_0.png" alt="friendly">
+                    </div>
+                <h4 class="heading">Kids Friendly</h4>
+                <p class="subtext">We take great care to make dental visits comfortable to your little ones.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="dental-treatments">
+        <div class="container-fluid dentreat">
+                <h2 class="text-center fw-bold">Dentalgram</h2>
+                <p class="text-center">Our state of art Dentalgram offers following Dental Treatments</p>
+           
+                <div class="row justify-content-center treatments">
+                    <div class="col-4 rectbl">
+                        <div class="icons">
+                            <img src="dentagram/dentagram/assets/images/Icon01.png" class="img-fluid">
+                        </div>
+                        <div class="maintext">
+                            <p> Emergency Dentistry</p>
+                        </div>
+                    </div>
+                    <div class="col-4 rectwt">
+                        <div class="icons">
+                            <img src="dentagram/dentagram/assets/images/Icon09.png" class="img-fluid">
+                        </div>
+                        <div class="maintext">
+                            <p>Dental Implants</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center treatments">
+                    <div class="col-4 rectwt">
+                        <div class="icons">
+                            <img src="dentagram/dentagram/assets/images/Icon02.png" class="img-fluid">
+                        </div>
+                        <div class="maintext">
+                            <p> Invisalign Clear Braces</p>
+                        </div>
+                    </div>
+                    <div class="col-4 rectbl">
+                        <div class="icons">
+                            <img src="dentagram/dentagram/assets/images/Icon10.png" class="img-fluid">
+                        </div>
+                        <div class="maintext">
+                            <p>Preventative Dentistry</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center treatments">
+                    <div class="col-4 rectbl">
+                        <div class="icons">
+                            <img src="dentagram/dentagram/assets/images/Icon03.png" class="img-fluid">
+                        </div>
+                        <div class="maintext">
+                            <p> Teeth Whitening</p>
+                        </div>
+                    </div>
+                    <div class="col-4 rectwt">
+                        <div class="icons">
+                            <img src="dentagram/dentagram/assets/images/Icon11.png" class="img-fluid">
+                        </div>
+                        <div class="maintext">
+                            <p>Crowns & Bridges</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center treatments">
+                    <div class="col-4 rectwt">
+                        <div class="icons">
+                            <img src="dentagram/dentagram/assets/images/Icon04.png" class="img-fluid">
+                        </div>
+                        <div class="maintext">
+                            <p>Dental Extractions</p>
+                        </div>
+                    </div>
+                    <div class="col-4 rectbl">
+                        <div class="icons">
+                            <img src="dentagram/dentagram/assets/images/Icon12.png" class="img-fluid">
+                        </div>
+                        <div class="maintext">
+                            <p>Dentures and partials</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center treatments">
+                    <div class="col-4 rectbl">
+                        <div class="icons">
+                            <img src="dentagram/dentagram/assets/images/Icon05.png" class="img-fluid">
+                        </div>
+                        <div class="maintext">
+                            <p> Sedation Dentistry</p>
+                        </div>
+                    </div>
+                    <div class="col-4 rectwt">
+                        <div class="icons">
+                            <img src="dentagram/dentagram/assets/images/Icon13.png" class="img-fluid">
+                        </div>
+                        <div class="maintext">
+                            <p>Advanced Technology</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center treatments">
+                    <div class="col-4 rectwt">
+                        <div class="icons">
+                            <img src="dentagram/dentagram/assets/images/Icon06.png" class="img-fluid" >
+                        </div>
+                        <div class="maintext">
+                            <p>Metal Free Crowns</p>
+                        </div>
+                    </div>
+                    <div class="col-4 rectbl">
+                        <div class="icons">
+                            <img src="dentagram/dentagram/assets/images/Icon14.png" class="img-fluid">
+                        </div>
+                        <div class="maintext">
+                            <p>Restorative Dentistry</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center treatments">
+                    <div class="col-4 rectbl">
+                        <div class="icons">
+                            <img src="dentagram/dentagram/assets/images/Icon07.png" class="img-fluid">
+                        </div>
+                        <div class="maintext">
+                            <p>Porcelain Veneers <p>
+                        </div>
+                    </div>
+                    <div class="col-4 rectwt">
+                        <div class="icons">
+                            <img src="dentagram/dentagram/assets/images/Icon15.png" class="img-fluid">
+                        </div>
+                        <div class="maintext">
+                            <p>Cosmetic Dentistry</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center treatments">
+                    <div class="col-4 rectwt">
+                        <div class="icons">
+                            <img src="dentagram/dentagram/assets/images/Icon08.png" class="img-fluid">
+                        </div>
+                        <div class="maintext">
+                            <p> Root Canal Therapy</p>
+                        </div>
+                    </div>
+                    <div class="col-4 rectbl">
+                        <div class="icons">
+                            <img src="dentagram/dentagram/assets/images/Icon16.png" class="img-fluid" >
+                        </div>
+                        <div class="maintext">
+                            <p>Dental Checkups</p>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </section>
+
+    <section class="emergency">
+        <div class="container-fluid girlbg " >
+            <div class="row justify-content-around emerbook" >  
+                <div class="col-4 " id="emergency">
+                    <h4 style="color:rgb(90,189,231);font-weight: bolder;">Emergency?</h4>
+                    <p> We Fondly Welcome New Patients & Dental Emergencies </p>
+                    <button class="btn mb-4 mt-1 text-centre text-light" style="background-color:rgb(90,189,231);">Book an Appointment</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer">
+        <div class="container-fluid footerone ml-0 mr-0">
+        <div class="row ">
+            <div class="col-7 left">
+                    <div>
+                        <img src="dentagram/dentagram/assets/images/MainLogo_0.png" alt="Dentalgram" id="dentalgram_pic">
+                    </div>
+                    <div class="leftsec">
+                    <div class="social-icon">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                        <a href="#"><i class="fa fa-youtube-play"></i></a>
+                    </div>
+                    <div class="text-light fw-bold">
+                        Dentalgram provides you digital solutions for Dental Offices and Dental Treatments
+                    </div>
+                    <div><i class="fa fa-phone">+1-647366-9333</i></div>
+                     <div>   <i class="fa fa-envelope">&nbsp;&nbsp;info@dentalgram.ca</i> </div>
+                     <div class="col-2 button conus"><a href="#">&nbsp;&nbsp;Contact Us</a></div>
+                    </div>  
+            </div>
+
+            <div class="col-5 right text-light text-center">
+                    <div class="justify-content-center rectin">
+                        <p class="fw-bold fs-15 text-light ">Download our App</p>
+                        <div><img src="dentagram/dentagram/assets/images/Layer17.png" alt="Google Play Link"></div>
+                        <!-- <div><img src="" alt="ios App Store Link"></div> -->
+                    </div>
+            </div>
+        </div>
+        <div class="row footer last">
+            <div class="col-7 ">
+               2022@Dentalgram.Inc.All Rights Reserved 
+            </div>
+            <div class="col-5">
+              Terms & Conditions  |   Privacy Policy  |   About Us
+            </div>
+        </div>
+    </div>
+        </div>
+    </section>
+
+    </body>
+</html>
